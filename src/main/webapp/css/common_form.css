@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding: 0;}
+body {
+    font-family: "寰蒋闆呴粦";
+    background: #f4f4f4;
+}
+
+/*header*/
+.header-line {
+    width: 100%;
+    height: 4px;
+    background: #0dbfdd;
+}
+
+/*content*/
+.content {
+    width: 28%;
+    margin: 70px auto 0;
+    text-align: center;
+}
+.content .p1{
+    float: left;
+    position: relative;
+    top: -4px;
+    color: #747474;
+    font-size: 14px;
+    display: inline-block;
+}
+.checkbox{
+    float:left;
+	margin-left: 51px;
+}
+
+.content-title {
+    margin: 10px 0 25px 0;
+    font-size: 2em;
+    color: #747474;
+    font-weight: normal;
+}
+.content-form {
+    width: 100%;
+    padding: 36px 0 20px;
+    border: 1px solid  #dedede;
+    text-align: center;
+    background: #fff;
+}
+.content-form form div {
+    margin-bottom: 19px;
+}
+.content-form form .user,
+.content-form form .password ,
+.content-form form .money,
+.content-form form .otherUserName{
+    width: 77%;
+    height: 20px;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid  #cccbcb;
+    border-radius: 7px;
+    letter-spacing: 1px;
+}
+.content-form form input:focus {
+    outline: none;
+    -webkit-box-shadow: 0 0 5px #0dbfdd;
+    box-shadow: 0 0 5px #0dbfdd;
+}
+.content-form-signup {
+    width: 77%;
+    margin: 0 auto;
+    padding: 10px;
+    border: 1px solid  #cccbcb;
+    border-radius: 7px;
+    font-size: 1em;
+    font-weight: bold;
+    color: #fff;
+    background: #0dbfdd;
+    cursor: pointer;
+}
+.content-form-signup:hover {
+    background: #0cb3d0;
+}
+.content-form-signup:focus {
+    outline: none;
+    border: 1px solid  #0cb3d0;
+}
+.content-login-description {
+    margin-top: 25px;
+    line-height: 1.63636364;
+    color: #747474;
+    font-size: .91666667rem;
+}
+.content-login-link {
+    font-size: 16px;
+    color: #0dbfdd;
+    text-decoration: none;
+}
+
+/*杈撳叆妗嗘棤鍐呭渚挎彁绀�/
+#remind_1,
+#remind_2 {
+    width: 76%;
+    margin: 0 auto 2px;
+    text-align: left;
+    font-size: .2em;
+    color: #f00;
+}
+
+.content-form form div form {
+	 width: 77%;
+    margin: 0 auto;
+    padding: 10px;
+    border: 1px solid  #cccbcb;
+    border-radius: 7px;
+    font-size: 1em;
+    font-weight: bold;
+    color: #fff;
+    background: #0dbfdd;
+    cursor: pointer;
+}
+
+

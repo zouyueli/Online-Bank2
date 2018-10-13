@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cx.bank.mapper.UserMapper">
+
+    <resultMap type="com.cx.bank.resultbean.Users" id="resultListUsers">
+      <id column="id" property="id"/>
+      <result column="username" property="username"/>
+      <result column="password" property="password"/>
+      <result column="money" property="money"/>
+      <result column="isFreeze" property="isFreeze"/>
+    </resultMap>
+
+    <resultMap type="com.cx.bank.resultbean.Detail" id="resultListDetail">
+        <id column="id" property="id" />
+        <result column="reason" property="reason" />
+        <result column="money" property="money" />
+        <result column="date" property="date"/>
+        <!-- 关联属性 -->
+        <association property="user" column="uid" javaType="com.cx.bank.resultbean.Users" resultMap="resultListUsers" />
+    </resultMap>
+    
+    <select id="selectDetailByUserId" parameterType="int" 
+           resultMap="resultListDetail">
+        select * from detail where uid = #{id}
+    </select>
+    
+    <insert id="insertTransDetail" parameterType="com.cx.bank.resultbean.Detail" 
+           useGeneratedKeys="true" keyProperty="id">
+        insert into detail(reason,money,date,uid) values(#{reason}, #{money},#{date},#{user.id})
+    </insert>
+    
+    
+</mapper>

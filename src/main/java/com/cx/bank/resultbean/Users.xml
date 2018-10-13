@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cx.bank.mapper.UserMapper">
+
+    
+
+    <select id="selectUserByUsernameAndPassword" parameterType="com.cx.bank.resultbean.Users" 
+           resultType="com.cx.bank.resultbean.Users">
+       select * from users where username=#{username} and password=#{password}
+    </select>
+    
+   
+    <insert id="insertUserByUsernameAndPassword" parameterType="com.cx.bank.resultbean.Users" 
+           useGeneratedKeys="true" keyProperty="id">
+       insert into users(username, password,money)values(#{username}, #{password},#{money})
+    </insert>
+
+    <update id="updateMoney" parameterType="com.cx.bank.resultbean.Users">
+         update users set money = #{money} where id=#{id}
+    </update>
+    
+
+    <select id="selectUserByUsername" parameterType="java.lang.String" 
+           resultMap="resultListUsers">
+       select * from users where username=#{username}
+    </select>
+   
+    <select id="selectAllUserInfo" resultMap="resultListUsers">
+       select * from users 
+    </select>
+    
+    
+    <update id="modifyIsFreeze" parameterType="com.cx.bank.resultbean.Users" >
+        update users set isFreeze =#{isFreeze} where id = #{id}
+    
+    </update>
+</mapper>
